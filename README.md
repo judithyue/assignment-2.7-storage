@@ -8,6 +8,7 @@ The configuration is organized into the following modules:
 
 - `modules/ec2-instance`: Creates and configures the EC2 instance
 - `modules/ebs-volume`: Creates the EBS volume and attaches it to the instance
+- `modules/vpc`: Creates the vpc and provide subnets for the ec2 instance
 
 ## Features
 

@@ -1,0 +1,36 @@
+# Example terraform.tfvars file
+# Copy this file to terraform.tfvars and modify as needed
+
+# AWS Configuration
+region           = "us-east-1"
+availability_zone = "us-east-1a"
+
+# VPC Configuration
+vpc_cidr                = "10.0.0.0/16"
+public_subnet_cidr      = "10.0.1.0/24"
+vpc_name                = "my-terraform-vpc"
+allowed_ssh_cidr_blocks = ["0.0.0.0/0"]  # Restrict this in production!
+
+# EC2 Instance Configuration
+ami_id        = ""  # Leave empty to use latest Amazon Linux 2
+instance_type = "t2.micro"
+instance_name = "my-ec2-instance"
+
+# EBS Volume Configuration
+volume_size      = 10
+volume_type      = "gp3"
+volume_encrypted = true
+device_name      = "/dev/sdh"
+volume_name      = "my-ebs-volume"
+
+# Terraform State Configuration
+state_bucket_name    = "my-terraform-state-bucket-unique-name"
+dynamodb_table_name  = "my-terraform-locks-table"
+
+# Common Tags
+tags = {
+  Environment = "dev"
+  Project     = "assignment-2.7-storage"
+  Owner       = "your-name"
+  ManagedBy   = "terraform"
+}
